@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic-Tac-Toe With Vue</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Play With Vue.Js</h1>
+        <h2>Tic-Tac-Toe</h2>
+    </header>
+    <section class="container" id="game">
+        <!--Game Section-->
+        <section class="row">
+            <div v-for="i in 3">
+                <div>
+                    <div v-for="j in 3" class="gameCell" @click="makeMove(i-1,j-1)">
+                        <span> {{gameFiled[i-1][j-1]}}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Player Score-->
+        <section class="m-3">
+            <div class="col-12 bg-warning" :style="playerOneMove">
+                <label>Player 1 (X) : {{playerOneScore}}</label>
+            </div>
+            <div class="col-12 bg-info" :style="playerTwoMove">
+                <label>Player 2 (O) : {{playerTwoScore}}</label>
+            </div>
+            <div class="col-12 bg-secondary">
+                <label>Draw : {{draw}}</label>
+            </div>
+        </section>
+        <!--Control Buttons-->
+        <section>
+            <button class="btn btn-success" @click="reset">Restart</button>
+            <button class="btn btn-danger " @click="newGame">New Game</button>
+        </section>
+    </section>
+</body>
+
+</html>
