@@ -1,0 +1,21 @@
+*{
+    text-align: center;
+}
+
+header{
+    background-color: salmon;
+}
+
+.gameCell{
+    display: table-cell;
+    border: black 2px solid;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    background-color: blanchedalmond;
+
+}
+
+.gameCell span{
+    font-size: 45px;
+}
